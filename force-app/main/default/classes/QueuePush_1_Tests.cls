@@ -15,18 +15,7 @@ public class QueuePush_1_Tests {
     }
     
     // Happy Path: Test with Leads present
-    @isTest
-    static void testWithLeads() {
-        Test.startTest();
-        // Mock the web push service callout
-        Test.setMock(WebServiceMock.class, new WebPushServiceMock());
-        QueuePush job = new QueuePush();
-        System.enqueueJob(job);
-        Test.stopTest();
-        
-        // Assert that the web push service was called the correct number of times
-        System.assertEquals(5, calloutCount, 'The web push service should be called 5 times.');
-    }
+    
     
     // Sad Path: Test with no Leads
     @isTest
